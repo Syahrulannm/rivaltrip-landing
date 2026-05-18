@@ -1,4 +1,4 @@
-import FadeIn from "../components/Fadein.jsx";
+import FadeIn from "../components/FadeIn.jsx";
 import { GALLERY } from "../data/content";
 import { useState, useEffect, useRef } from "react";
 import { MapPin, Users, Star, ArrowRight, MessageCircle, Camera, Heart, Compass, BookOpen, Church, GraduationCap, Smile, Zap, Shield, ChevronDown, Menu, X, Sunset } from "lucide-react";
