@@ -1,4 +1,4 @@
-import FadeIn from "../components/Fadein.jsx";
+import FadeIn from "../components/FadeIn.jsx";
 import { TESTIMONIALS } from "../data/content";
 import { MapPin, Star } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
