@@ -34,8 +34,8 @@ export const WHY_POINTS = [
 ];
 
 export const TESTIMONIALS = [
-  { name: "Amel R.", location: "Semarang", rating: 5, text: "Tripnya nyaman dan seru banget. Ga nyangka open trip bisa sehangat ini, langsung dapet temen baru!", avatar: "AR" },
-  { name: "Dimas K.", location: "Yogyakarta", rating: 5, text: "Adminnya fast respon dan helpful banget. Semua pertanyaan dijawab dengan sabar. Recommend banget!", avatar: "DK" },
-  { name: "Fira N.", location: "Solo", rating: 5, text: "Baru pertama ikut open trip tapi langsung nyaman. Timnya profesional tapi tetap asyik diajak ngobrol.", avatar: "FN" },
-  { name: "Bagas P.", location: "Jakarta", rating: 5, text: "Custom trip buat kantor kita sukses besar. Semua detail diperhatiin, tim kita happy semua!", avatar: "BP" },
+  { name: "Amel R.", location: "Brebes", rating: 5, text: "Tripnya nyaman dan seru banget. Ga nyangka open trip bisa sehangat ini, langsung dapet temen baru!", avatar: "AR" },
+  { name: "Dimas K.", location: "Tegal", rating: 5, text: "Adminnya fast respon dan helpful banget. Semua pertanyaan dijawab dengan sabar. Recommend banget!", avatar: "DK" },
+  { name: "Fira N.", location: "Pemalang", rating: 5, text: "Baru pertama ikut open trip tapi langsung nyaman. Timnya profesional tapi tetap asyik diajak ngobrol.", avatar: "FN" },
+  { name: "Bagas P.", location: "Tegal", rating: 5, text: "Custom trip buat kantor kita sukses besar. Semua detail diperhatiin, tim kita happy semua!", avatar: "BP" },
 ];
