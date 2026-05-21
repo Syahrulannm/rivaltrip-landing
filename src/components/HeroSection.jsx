@@ -1,13 +1,13 @@
 import { MapPin, ArrowRight, MessageCircle, ChevronDown } from "lucide-react";
 import FadeIn from "./FadeIn.jsx";
-import heroImage from "../assets/hero-rivaltrip.png";
+import heroImage from "../assets/hero-rivaltrip.webp";
 export default function Hero() {
   const WA_LINK = "https://wa.me/6281917125638?text=Halo%20RivalTrip%2C%20saya%20ingin%20tanya%20tentang%20trip!";
   return (
     <>
       {/* HERO */}
       <section style={{ position: "relative", minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", overflow: "hidden" }}>
-        <img src={heroImage} alt="Hero trip" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
+        <img src={heroImage} alt="Hero trip" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} loading="lazy" />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(15,30,28,0.55) 0%, rgba(15,30,28,0.35) 50%, rgba(15,30,28,0.65) 100%)" }} />
 
         <div style={{ position: "relative", zIndex: 2, padding: "100px 24px 60px", maxWidth: 680, margin: "0 auto", width: "100%" }}>

@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import { MapPin, Users, Star, ArrowRight, MessageCircle, Camera, Heart, Compass, BookOpen, Church, GraduationCap, Smile, Zap, Shield, ChevronDown, Menu, X, Sunset } from "lucide-react";
-import galleryImage1 from "../assets/gallery-1.jpg";
-import galleryImage2 from "../assets/gallery-2.jpg";
-import galleryImage3 from "../assets/gallery-3.png";
-import galleryImage4 from "../assets/gallery-4.jpg";
-import galleryImage5 from "../assets/gallery-5.png";
-import galleryImage6 from "../assets/gallery-6.jpg";
+import { Bus, MapPin, Users, Star, ArrowRight, MessageCircle, Camera, Heart, Compass, BookOpen, Church, GraduationCap, Smile, Zap, Shield, ChevronDown, Menu, X, Sunset } from "lucide-react";
+import galleryImage1 from "../assets/gallery-1.webp";
+import galleryImage2 from "../assets/gallery-2.webp";
+import galleryImage3 from "../assets/gallery-3.webp";
+import galleryImage4 from "../assets/gallery-4.webp";
+import galleryImage5 from "../assets/gallery-5.webp";
+import galleryImage6 from "../assets/gallery-6.webp";
 export const NAV_LINKS = ["Open Trip", "Custom Trip", "Galeri", "Tentang Kami"];
 
 export const TRIP_TYPES = [
@@ -14,6 +14,7 @@ export const TRIP_TYPES = [
   { icon: <Heart size={22} />, label: "Gathering", desc: "Momen kebersamaan tim" },
   { icon: <GraduationCap size={22} />, label: "Study Tour", desc: "Belajar sambil berwisata" },
   { icon: <Church size={22} />, label: "Wisata Religi", desc: "Perjalanan penuh makna" },
+  { icon: <Bus size={22} />, label: "Sewa Transportasi", desc: "Armada nyaman, siap jalan" },
 ];
 
 export const GALLERY = [

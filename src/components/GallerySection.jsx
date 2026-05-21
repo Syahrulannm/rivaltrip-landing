@@ -20,27 +20,27 @@ export default function GallerySection() {
           {/* Tall left */}
           <FadeIn delay={0} style={{ gridRow: "span 2" }}>
             <div style={{ gridRow: "span 2", borderRadius: 16, overflow: "hidden", height: "100%", minHeight: 300 }}>
-              <img src={GALLERY[0].src} alt={GALLERY[0].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <img src={GALLERY[0].src} alt={GALLERY[0].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" />
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
             <div style={{ borderRadius: 16, overflow: "hidden", height: 145 }}>
-              <img src={GALLERY[1].src} alt={GALLERY[1].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <img src={GALLERY[1].src} alt={GALLERY[1].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" />
             </div>
           </FadeIn>
           <FadeIn delay={0.15}>
             <div style={{ borderRadius: 16, overflow: "hidden", height: 145 }}>
-              <img src={GALLERY[2].src} alt={GALLERY[2].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <img src={GALLERY[2].src} alt={GALLERY[2].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" />
             </div>
           </FadeIn>
           <FadeIn delay={0.2}>
             <div style={{ borderRadius: 16, overflow: "hidden", height: 145 }}>
-              <img src={GALLERY[4].src} alt={GALLERY[4].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <img src={GALLERY[4].src} alt={GALLERY[4].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" />
             </div>
           </FadeIn>
           <FadeIn delay={0.25}>
             <div style={{ borderRadius: 16, overflow: "hidden", height: 145 }}>
-              <img src={GALLERY[5].src} alt={GALLERY[5].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <img src={GALLERY[5].src} alt={GALLERY[5].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" />
             </div>
           </FadeIn>
         </div>
@@ -48,7 +48,7 @@ export default function GallerySection() {
         {/* Wide bottom */}
         <FadeIn delay={0.3}>
           <div style={{ borderRadius: 16, overflow: "hidden", height: 200, marginTop: 10 }}>
-            <img src={GALLERY[3].src} alt={GALLERY[3].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <img src={GALLERY[3].src} alt={GALLERY[3].alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" />
           </div>
         </FadeIn>
       </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MessageCircle, Menu, X } from "lucide-react";
 import { NAV_LINKS } from "../data/content.jsx";
-import logoRivalTrip from "../assets/logo-rivaltrip.jpg";
+import logoRivalTrip from "../assets/logo-rivaltrip.webp";
 {
   /* NAV */
 }
@@ -43,6 +43,7 @@ export default function Navbar() {
                 objectFit: "contain",
                 borderRadius: 10,
               }}
+              loading="lazy"
             />
           </div>
           <span style={{ fontFamily: "'Lora', serif", fontWeight: 600, fontSize: 18, color: scrolled ? "#1a1a1a" : "white", letterSpacing: "-0.3px" }}>RivalTrip</span>

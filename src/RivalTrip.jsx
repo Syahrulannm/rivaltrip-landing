@@ -7,7 +7,7 @@ import Hero from "./components/HeroSection.jsx";
 import { NAV_LINKS, TRIP_TYPES, GALLERY, WHY_POINTS, TESTIMONIALS } from "./data/content.jsx";
 import GallerySection from "./components/GallerySection.jsx";
 import Testimonials from "./components/Testimonials.jsx";
-import ctaImage from "./assets/cta-background.png";
+import ctaImage from "./assets/cta-background.webp";
 {
   TRIP_TYPES.map((t) => {
     const Icon = t.icon;
@@ -186,7 +186,7 @@ export default function RivalTrip() {
       <Testimonials />
       {/* CTA SECTION */}
       <section style={{ position: "relative", padding: "100px 24px", overflow: "hidden" }}>
-        <img src={ctaImage} width="1400" alt="CTA background" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+        <img src={ctaImage} width="1400" alt="CTA background" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(20,55,52,0.82) 0%, rgba(30,55,45,0.75) 100%)" }} />
         <FadeIn>
           <div style={{ position: "relative", zIndex: 2, textAlign: "center", maxWidth: 560, margin: "0 auto" }}>
