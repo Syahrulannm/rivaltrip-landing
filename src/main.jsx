@@ -1,12 +1,6 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
 import "./index.css";
-import RivalTrip from "./RivalTrip.jsx";
-import Footer from "./components/Footer.jsx";
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RivalTrip />
-    <Footer />
-  </StrictMode>,
-);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);

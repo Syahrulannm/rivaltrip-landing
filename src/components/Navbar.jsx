@@ -1,99 +1,74 @@
 import { useState, useEffect } from "react";
-import { MessageCircle, Menu, X } from "lucide-react";
-import { NAV_LINKS } from "../data/content.jsx";
-import logoRivalTrip from "../assets/logo-rivaltrip.webp";
-{
-  /* NAV */
-}
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import logo from "../assets/logo.png";
+
+const NAV_LINKS = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/services", label: "Services" },
+  { to: "/trips", label: "Trips" },
+  { to: "/contact", label: "Contact" },
+];
+
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
+  const { pathname } = useLocation();
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
-  const WA_LINK = "https://wa.me/6281917125638?text=Halo%20RivalTrip%2C%20saya%20ingin%20tanya%20tentang%20trip!";
+
   return (
-    <nav
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        background: scrolled ? "rgba(250,250,248,0.95)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(0,0,0,0.06)" : "none",
-        transition: "all 0.35s ease",
-        padding: "0 20px",
-      }}
-    >
-      <div style={{ maxWidth: 1100, margin: "0 auto", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        {/* Logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <div style={{ width: 32, height: 32, borderRadius: 10, background: "linear-gradient(135deg, #5BADA5, #4A9990)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <img
-              src={logoRivalTrip}
-              alt="RivalTrip Logo"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-                borderRadius: 10,
-              }}
-              loading="lazy"
-            />
-          </div>
-          <span style={{ fontFamily: "'Lora', serif", fontWeight: 600, fontSize: 18, color: scrolled ? "#1a1a1a" : "white", letterSpacing: "-0.3px" }}>RivalTrip</span>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/60 backdrop-blur-xl border-white/20 shadow-sm" : "bg-transparent"}`}>
+      <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="RivalTrip Logo" className="w-9 h-9 object-contain" />
+
+          <span className="font-heading text-xl font-semibold text-teal-dark tracking-tight">
+            Rival<span className="text-primary">Trip</span>
+          </span>
+        </Link>
+
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((l) => (
+            <Link key={l.to} to={l.to} className={`text-sm font-medium transition-colors hover:text-primary ${pathname === l.to ? "text-primary" : "text-teal-dark/70"}`}>
+              {l.label}
+            </Link>
+          ))}
+          <Link to="/book-now" className="bg-[#f97316] text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-[#f97316]/90 transition-colors">
+            Book Now
+          </Link>
         </div>
 
-        {/* Desktop nav */}
-        <div style={{ display: "flex", gap: 28, alignItems: "center" }} className="desktop-nav">
-          {NAV_LINKS.map((l) => {
-            const sectionMap = {
-              "Open Trip": "#open-trip",
-              "Custom Trip": "#open-trip",
-              Galeri: "#galeri",
-              "Tentang Kami": "#tentang-kami",
-            };
-            return (
-              <a key={l} href={sectionMap[l]} className="nav-link" style={{ color: scrolled ? "#444" : "rgba(255,255,255,0.85)" }}>
-                {l}
-              </a>
-            );
-          })}
-          <a href={WA_LINK} className="btn-wa" style={{ padding: "10px 20px", fontSize: 14 }}>
-            <MessageCircle size={15} /> Chat Kami
-          </a>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: "none", border: "none", cursor: "pointer", color: scrolled ? "#1a1a1a" : "white", padding: 4 }} className="mobile-menu-btn">
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+        {/* Mobile toggle */}
+        <button onClick={() => setOpen(!open)} className="md:hidden p-2 text-teal-dark">
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div style={{ background: "white", borderTop: "1px solid #eee", padding: "20px", display: "flex", flexDirection: "column", gap: 18 }}>
-          {NAV_LINKS.map((l) => {
-            const sectionMap = {
-              "Open Trip": "#open-trip",
-              "Custom Trip": "#open-trip",
-              Galeri: "#galeri",
-              "Tentang Kami": "#tentang-kami",
-            };
-            return (
-              <a key={l} href={sectionMap[l]} className="nav-link" style={{ color: scrolled ? "#444" : "rgba(255,255,255,0.85)" }}>
-                {l}
-              </a>
-            );
-          })}
-          <a href={WA_LINK} className="btn-wa" style={{ justifyContent: "center" }}>
-            <MessageCircle size={16} /> Chat WhatsApp
-          </a>
+      {open && (
+        <div className={`md:hidden ${scrolled ? "bg-white/60 backdrop-blur-xl border-white/20 shadow-sm" : "bg-white/60 backdrop-blur-xl border-white/20 shadow-sm"}`} animate-fade-up>
+          <div className="px-5 py-4 space-y-3">
+            {NAV_LINKS.map((l) => (
+              <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className={`block text-sm font-medium py-2 ${pathname === l.to ? "text-primary" : "text-teal-dark/70"}`}>
+                {l.label}
+              </Link>
+            ))}
+            <Link to="/book-now" onClick={() => setOpen(false)} className="block bg-[#f97316] hover:bg-[#f97316]/90 text-white text-sm font-medium px-5 py-2.5 rounded-full text-center mt-2">
+              Book Now
+            </Link>
+          </div>
         </div>
       )}
     </nav>

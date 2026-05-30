@@ -1,56 +1,54 @@
-{
-  /* FOOTER */
-}
-import { useState, useEffect, useRef } from "react";
-import { MapPin, Users, Star, ArrowRight, MessageCircle, Camera, Heart, Compass, BookOpen, Church, GraduationCap, Smile, Zap, Shield, ChevronDown, Menu, X, Sunset } from "lucide-react";
-import logoRivalTrip from "../assets/logo-rivaltrip.jpg";
+import { Link } from "react-router-dom";
+import { Instagram, MapPin, Phone } from "lucide-react";
+import logoImage from "../assets/logo.png";
 export default function Footer() {
   return (
-    <footer style={{ background: "#0f1f1e", padding: "48px 24px 32px" }}>
-      <div style={{ maxWidth: 960, margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 32, marginBottom: 40 }}>
+    <footer className="bg-[hsl(180,30%,10%)] text-[hsl(40,15%,80%)] pt-16 pb-8">
+      <div className="max-w-6xl mx-auto px-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-              <div style={{ width: 32, height: 32, borderRadius: 10, background: "linear-gradient(135deg, #5BADA5, #4A9990)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                {/* Logo */}
-                <img
-                  src={logoRivalTrip}
-                  alt="RivalTrip Logo"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                    borderRadius: 10,
-                  }}
-                />
-              </div>
-              <span style={{ fontFamily: "'Lora', serif", fontWeight: 600, fontSize: 18, color: "white" }}>RivalTrip</span>
+            <div className="flex items-center gap-2.5 mb-4">
+              <img src={logoImage} alt="RivalTrip" className="h-9 w-9 rounded-lg object-cover" />
+              <span className="font-heading text-xl font-medium text-white">RivalTrip</span>
             </div>
-            <p style={{ fontFamily: "'DM Sans'", fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: 240, fontWeight: 300 }}>Teman perjalanan untuk trip yang nyaman, hangat, dan berkesan.</p>
+            <p className="font-heading italic text-[hsl(40,15%,65%)] text-lg leading-relaxed">"Journey Together, Stories Forever."</p>
           </div>
 
-          <div style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
-            <div>
-              <div style={{ fontFamily: "'DM Sans'", fontSize: 11, color: "rgba(255,255,255,0.35)", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: 14 }}>Trip</div>
-              {["Open Trip", "Custom Trip", "Gathering", "Study Tour"].map((l) => (
-                <div key={l} style={{ fontFamily: "'DM Sans'", fontSize: 13, color: "rgba(255,255,255,0.55)", marginBottom: 10, cursor: "pointer" }}>
-                  {l}
-                </div>
+          <div>
+            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Menu</h4>
+            <div className="space-y-2.5">
+              {[
+                ["/", "Home"],
+                ["/about", "About"],
+                ["/services", "Services"],
+                ["/trips", "Trips"],
+                ["/contact", "Contact"],
+                ["/book-now", "Book Now"],
+              ].map(([to, label]) => (
+                <Link key={to} to={to} className="block text-sm hover:text-white transition-colors">
+                  {label}
+                </Link>
               ))}
             </div>
-            <div>
-              <div style={{ fontFamily: "'DM Sans'", fontSize: 11, color: "rgba(255,255,255,0.35)", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: 14 }}>Kontak</div>
-              <div style={{ fontFamily: "'DM Sans'", fontSize: 13, color: "rgba(255,255,255,0.55)", marginBottom: 10 }}>WhatsApp</div>
-              <div style={{ fontFamily: "'DM Sans'", fontSize: 13, color: "rgba(255,255,255,0.55)", marginBottom: 10 }}>Instagram</div>
-              <div style={{ fontFamily: "'DM Sans'", fontSize: 13, color: "rgba(255,255,255,0.55)" }}>TikTok</div>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Hubungi Kami</h4>
+            <div className="space-y-3 text-sm">
+              <a href="https://wa.me/6281917125638" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Phone size={15} /> WhatsApp
+              </a>
+              <a href="https://instagram.com/rivaltrip.id" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Instagram size={15} /> @rivaltrip.id
+              </a>
+              <p className="flex items-center gap-2">
+                <MapPin size={15} /> Tegal, Jawa Tengah
+              </p>
             </div>
           </div>
         </div>
 
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <span style={{ fontFamily: "'DM Sans'", fontSize: 12, color: "rgba(255,255,255,0.25)" }}>© 2025 RivalTrip. All rights reserved.</span>
-          <span style={{ fontFamily: "'DM Sans'", fontSize: 12, color: "rgba(255,255,255,0.25)" }}>Made with ♥ for travelers</span>
-        </div>
+        <div className="border-t border-white/10 pt-6 text-center text-xs text-[hsl(40,15%,45%)]">© {new Date().getFullYear()} RivalTrip. All rights reserved.</div>
       </div>
     </footer>
   );

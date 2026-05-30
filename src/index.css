@@ -1,1 +1,115 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 50 11% 97%;
+    --foreground: 180 67% 15%;
+    --card: 40 20% 99%;
+    --card-foreground: 180 67% 15%;
+    --popover: 40 20% 99%;
+    --popover-foreground: 180 67% 15%;
+    --primary: 174 81% 46%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 50 11% 93%;
+    --secondary-foreground: 180 67% 15%;
+    --muted: 50 8% 93%;
+    --muted-foreground: 180 20% 40%;
+    --accent: 30 65% 57%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 50 10% 88%;
+    --input: 50 10% 88%;
+    --ring: 178 44% 56%;
+    --chart-1: 178 44% 56%;
+    --chart-2: 30 63% 57%;
+    --chart-3: 180 67% 15%;
+    --chart-4: 50 30% 70%;
+    --chart-5: 178 30% 70%;
+    --radius: 0.75rem;
+    --font-body: "Plus Jakarta Sans", sans-serif;
+    --font-heading: "Fraunces", serif;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 180 30% 6%;
+    --foreground: 50 11% 95%;
+    --card: 180 25% 9%;
+    --card-foreground: 50 11% 95%;
+    --popover: 180 25% 9%;
+    --popover-foreground: 50 11% 95%;
+    --primary: 178 42% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 20% 14%;
+    --secondary-foreground: 50 11% 95%;
+    --muted: 180 15% 14%;
+    --muted-foreground: 178 15% 55%;
+    --accent: 30 80% 57%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 180 15% 18%;
+    --input: 180 15% 18%;
+    --ring: 178 44% 56%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+/* ------------------------------------------------------------------------------ */
+@keyframes floatDown {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+}
+
+.animate-float-down {
+  animation: floatDown 2.4s ease-in-out infinite;
+}
+/* bg-[#08152e]   // navy gelap
+bg-[#177d73]   // teal
+bg-[#25D366]   // whatsapp green */
