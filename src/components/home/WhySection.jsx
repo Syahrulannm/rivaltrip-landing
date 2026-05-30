@@ -50,11 +50,11 @@ export default function WhySection() {
 
           {/* RIGHT */}
           <div className="grid grid-cols-2 gap-4 sm:gap-6">
-            <img src={image1} alt="" className="rounded-[28px] h-52 sm:h-72 object-cover w-full mt-8" />
+            <img src={image1} alt="" className="rounded-[28px] h-52 sm:h-72 object-cover w-full mt-8" loading="lazy" />
 
-            <img src={image2} alt="" className="rounded-[28px] h-52 sm:h-72 object-cover w-full" />
+            <img src={image2} alt="" className="rounded-[28px] h-52 sm:h-72 object-cover w-full" loading="lazy" />
 
-            <img src={image3} alt="" className="rounded-[28px] h-56 sm:h-72 object-cover w-full col-span-2" />
+            <img src={image3} alt="" className="rounded-[28px] h-56 sm:h-72 object-cover w-full col-span-2" loading="lazy" />
           </div>
         </div>
       </div>
